@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-const API_HOST = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
-const API_BASE_URL = `http://${API_HOST}:3001/api`;
+const API_BASE_URL = `/api`;
 
 const api = axios.create({
   baseURL: API_BASE_URL,
