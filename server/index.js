@@ -6,6 +6,7 @@ const path = require('path');
 const applianceRoutes = require('./routes/appliance');
 const planRoutes = require('./routes/plan');
 const knowledgeRoutes = require('./routes/knowledge');
+const loginRoutes = require('./routes/login');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 app.use('/api/appliances', applianceRoutes);
 app.use('/api/plans', planRoutes);
 app.use('/api/knowledge', knowledgeRoutes);
+app.use('/api/login', loginRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

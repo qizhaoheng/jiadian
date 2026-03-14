@@ -49,12 +49,24 @@ const Home = () => {
           <h1 className="text-2xl font-black text-gray-800 tracking-tight">家电决策助手</h1>
           <p className="text-gray-400 text-xs mt-1">你的私人购物决策专家</p>
         </div>
-        <button 
-          onClick={() => navigate('/appliances?add=true')}
-          className="p-2.5 bg-blue-600 text-white rounded-xl shadow-lg shadow-blue-200 active:scale-95 transition-transform"
-        >
-          <PlusCircle size={24} />
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => {
+              localStorage.removeItem('identifier');
+              window.dispatchEvent(new Event('identifier-changed'));
+              navigate('/login', { replace: true });
+            }}
+            className="px-3 py-2 text-xs font-bold text-gray-500 bg-gray-100 rounded-xl"
+          >
+            退出
+          </button>
+          <button 
+            onClick={() => navigate('/appliances?add=true')}
+            className="p-2.5 bg-blue-600 text-white rounded-xl shadow-lg shadow-blue-200 active:scale-95 transition-transform"
+          >
+            <PlusCircle size={24} />
+          </button>
+        </div>
       </div>
 
       {/* Main Grid */}
