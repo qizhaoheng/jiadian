@@ -27,7 +27,7 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50 pb-16">
+      <div className="min-h-screen bg-gray-50">
         <div className="max-w-mobile mx-auto min-h-screen bg-white shadow-xl relative">
           <Routes>
             <Route path="/login" element={isAuthed ? <Navigate to="/" replace /> : <Login />} />
